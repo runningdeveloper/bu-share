@@ -84,11 +84,11 @@ function App() {
         {/* <Flex gap="xs" my="lg"> */}
         {/* <IconRun size={48} stroke={2} /> */}
 
-        <Title my="lg" ta="center" size={60} order={1}>
+        <Title mt="lg" mb="xs" ta="center" size={80} order={1}>
           LAP {getCurrentLap()}
         </Title>
         {sortNames(names).map((name) => (
-          <Flex key={name.name} gap="xs" my="xs" miw="300" align="center">
+          <Flex key={name.name} gap="xs" mb="xs" miw="300" align="center">
             {" "}
             {name.running ? <IconCircleCheckFilled
               size={40}
