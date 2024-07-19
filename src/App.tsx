@@ -77,16 +77,17 @@ function App() {
     <Container size="xs">
       <Flex
         // gap="md"
-        justify="center"
+        // justify="center"
         align="center"
         direction="column"
       >
         {/* <Flex gap="xs" my="lg"> */}
         {/* <IconRun size={48} stroke={2} /> */}
 
-        <Title mt="lg" mb="xs" ta="center" size={80} order={1}>
+        <Title mt="lg" mb="-20px" pb={0} ta="center" size={80} order={1}>
           LAP {getCurrentLap()}
         </Title>
+        <Title mb="lg" ta="center" size={20} order={2}>{getCurrentLap()*6.7} km</Title>
         {sortNames(names).map((name) => (
           <Flex key={name.name} gap="xs" mb="xs" miw="300" align="center">
             {" "}
@@ -116,7 +117,7 @@ function App() {
           radius="md"
           leftSection={<IconBrandWhatsapp size={30} />}
           onClick={() => {
-            const text = {text: `Lap ${getCurrentLap()} 🚀\n` + names.map(n => `${n.running?"🟢":"🔴"} ${n.name}`).join("\n")}
+            const text = {text: `Lap ${getCurrentLap()} - ${getCurrentLap()*6.7} km 🚀\n` + names.map(n => `${n.running?"🟢":"🔴"} ${n.name}`).join("\n")}
             try{
               navigator.share(text)
             }catch(e){
